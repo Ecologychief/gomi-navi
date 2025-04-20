@@ -92,7 +92,7 @@ function renderResult(id) {
       <li>必ず分別場所に従ってください。</li>
       <li>不明な場合は責任者に確認しましょう。</li>
     </ul>
-    <img src="../片付け地図.png" alt="地図" class="map" />
+   <img src="map.png" alt="片付け地図" class="map-image">
   `;
   app.appendChild(notice);
 
