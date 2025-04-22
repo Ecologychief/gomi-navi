@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学校祭ゴミ分別ガイド</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Theme Color for Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333"/>
+    <!-- iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ゴミ分別">
+    <link rel="apple-touch-icon" href="images/icon-192x192.png">
+</head>
+<body>
+    <header>
+        <h1>学校祭 ゴミ分別ガイド</h1>
+    </header>
 
+    <main id="app">
+        <!-- 質問表示エリア -->
+        <div id="question-container" class="container">
+            <p id="question-text" class="question-title"></p>
+            <div id="options-container" class="options-grid">
+                <!-- 選択肢ボタンがここに動的に生成される -->
+            </div>
+            <div class="navigation-buttons">
+                <button id="back-button" class="button secondary-button" style="display: none;">ひとつ戻る</button>
+                <button id="reset-button" class="button secondary-button">最初に戻る</button>
+            </div>
+        </div>
+
+        <!-- 結果表示エリア -->
+        <div id="result-container" class="container" style="display: none;">
+            <h2>このゴミはこの場所！</h2>
+            <div class="result-content">
+                <p><strong>場所:</strong> <span id="result-location"></span></p>
+                <p><strong>対象のゴミ:</strong> <span id="result-items"></span></p>
+                <div id="result-notes-container" style="display: none;">
+                    <p><strong>注意事項:</strong></p>
+                    <pre id="result-notes"></pre> {/* preタグで改行を維持 */}
+                </div>
+                <div id="map-container">
+                     <p><strong>地図:</strong></p>
+                     <img id="result-map" src="" alt="地図">
+                </div>
+            </div>
+             <div class="navigation-buttons">
+                <button id="reset-button-result" class="button primary-button">最初に戻る</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© [学校祭実行委員会名など] </p> {/* 必要に応じて変更してください */}
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Service Workerの登録 (オフライン対応)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // GitHub Pagesのリポジトリ名を考慮する場合はパスを調整
+                // 例: navigator.serviceWorker.register('/リポジトリ名/sw.js')
+                navigator.serviceWorker.register('sw.js') // ルートに置く場合
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('ServiceWorker registration failed: ', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

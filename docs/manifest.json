@@ -1,0 +1,23 @@
+{
+  "name": "学校祭ゴミ分別ガイド",
+  "short_name": "ゴミ分別",
+  "description": "学校祭の片付け時に使うゴミ分別案内アプリ",
+  "start_url": ".", /* 現在のディレクトリを基準にする場合 */
+  "display": "standalone", /* アプリのように表示 */
+  "background_color": "#f4f4f4",
+  "theme_color": "#2d2d2d",
+  "icons": [
+    {
+      "src": "images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable" /* マスキング可能なアイコン */
+    },
+    {
+      "src": "images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+       "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+/* Reset and Base Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    line-height: 1.7;
+    background-color: #f4f4f4; /* Slightly lighter gray background */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+    background-color: #2d2d2d; /* Dark gray header */
+    color: #fff;
+    padding: 1.2rem 1rem;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+main {
+    flex: 1;
+    padding: 1.5rem 1rem;
+    max-width: 700px; /* Content max width */
+    margin: 1rem auto; /* Center content vertically and horizontally */
+    width: 100%;
+}
+
+.container {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+    margin-bottom: 1.5rem;
+}
+
+/* Questions and Options */
+.question-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #222;
+    text-align: center; /* Center question */
+    white-space: pre-wrap; /* 質問文中の改行を反映 */
+}
+
+.options-grid {
+    display: grid;
+    gap: 0.8rem; /* Space between buttons */
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid transparent; /* Base border */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    background-color: #4a4a4a; /* Default dark button */
+    color: #fff;
+}
+
+.button:hover {
+    background-color: #3a3a3a;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.button:active {
+    transform: scale(0.98);
+    background-color: #2a2a2a;
+}
+
+/* Specific button types */
+.primary-button {
+    background-color: #555; /* Slightly lighter dark for primary actions */
+    color: #fff;
+}
+.primary-button:hover {
+    background-color: #444;
+}
+
+.secondary-button {
+    background-color: #f0f0f0; /* Light gray for secondary */
+    color: #333;
+    border-color: #ccc;
+}
+
+.secondary-button:hover {
+    background-color: #e0e0e0;
+    border-color: #bbb;
+}
+
+.navigation-buttons {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 1rem;
+    justify-content: center;
+}
+
+.navigation-buttons .button {
+    flex: 1 1 150px; /* Allow buttons to grow/shrink, base width 150px */
+    max-width: 220px; /* Limit max button width */
+}
+
+/* Result Display */
+#result-container h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.result-content {
+    margin-bottom: 2rem;
+}
+
+#result-container p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+#result-container strong {
+    font-weight: 600;
+    color: #444;
+    display: inline-block; /* Allows margin but stays inline */
+    margin-right: 0.5em;
+}
+
+#result-notes-container {
+    background-color: #f9f9f9;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+    border: 1px solid #eee;
+    border-left: 4px solid #aaa; /* Gray accent border */
+}
+
+#result-notes-container p strong {
+    display: block; /* Make "注意事項:" title block */
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+#result-notes {
+    white-space: pre-wrap; /* Preserve line breaks */
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+#map-container {
+    margin-top: 1.5rem;
+}
+
+#map-container p strong {
+     display: block;
+     margin-bottom: 0.5rem;
+     text-align: left;
+     color: #333;
+     font-size: 1.1rem;
+}
+
+#result-map {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    display: block; /* Ensure it behaves as a block element */
+    margin: 0 auto; /* Center map if container is wider */
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #888;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+    main {
+        padding: 1rem 0.8rem;
+        margin-top: 0.5rem;
+    }
+    .container {
+        padding: 1.2rem;
+    }
+    .question-title {
+        font-size: 1.1rem;
+    }
+    .button {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+    .navigation-buttons {
+        flex-direction: column; /* Stack nav buttons */
+        align-items: center; /* Center stacked buttons */
+    }
+     .navigation-buttons .button {
+        flex-basis: auto;
+        width: 90%; /* Control width when stacked */
+        max-width: 300px;
+    }
+    #result-container h2 {
+        font-size: 1.3rem;
+    }
+    #result-container p {
+       font-size: 1rem;
+    }
+    #result-notes {
+        font-size: 0.9rem;
+    }
+}
