@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学校祭ゴミ分別アプリ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FFFFFF"/>
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+</head>
+<body>
+    <div class="container">
+        <h1>学校祭ゴミ分別</h1>
 
+        <div id="question-area">
+            <h2 id="question-title"></h2>
+            <div id="options-area">
+                <!-- 選択肢ボタンがここに動的に追加されます -->
+            </div>
+            <p id="instruction-text" class="instruction"></p>
+        </div>
+
+        <div id="result-area" style="display: none;">
+            <h2>このゴミはこの場所！</h2>
+            <p id="result-location" class="location-name"></p>
+            <p id="result-garbage-types"></p>
+            <div class="map-container">
+                <img id="result-map" src="" alt="捨て場所の地図">
+            </div>
+            <div id="result-notes">
+                <h3>注意事項</h3>
+                <p id="result-notes-text"></p>
+            </div>
+        </div>
+
+        <div class="navigation-buttons">
+            <button id="back-button" style="display: none;">ひとつ戻る</button>
+            <button id="reset-button" style="display: none;">最初に戻る</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
